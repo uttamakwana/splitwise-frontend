@@ -18,7 +18,7 @@ const Login = () => {
       return email.focus();
     }
 
-    const response = await axios.post("http://192.168.123.142:8080/users/login", {
+    const response = await axios.post("https://splitwise-n301.onrender.com/users/login", {
       email: email.value,
       password: password.value,
     });

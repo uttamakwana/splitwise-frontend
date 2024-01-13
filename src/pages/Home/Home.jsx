@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const getUserInfo = async () => {
       try {
-        const response = await axios.post("http://192.168.123.142:8080/users/info", {
+        const response = await axios.post("https://splitwise-n301.onrender.com/users/info", {
           id: user._id,
         });
         if (response.data) {
