@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className="home-page__header bg-clr-black top-sticky">
       <div className="home-page__header p-1 bg-clr-black flex-between">
-        <h1 className="clr-white cursor-pointer" onClick={() => navigate("/")}>
+        <h1 className="clr-white cursor-pointer" onClick={() => navigate("/home")}>
           <span className="extra-bold clr-blue">SplitWise🚀</span>
         </h1>
         <div className="flex-center bg-clr-gray-3 w40 h40 br-50 ar1 cursor-pointer">

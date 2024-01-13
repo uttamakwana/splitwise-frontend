@@ -46,7 +46,7 @@ const Register = () => {
       if (response.data.user) {
         setUser(response.data.user);
         alert("Registration successful!");
-        navigate("/");
+        navigate("/home");
       }
     } catch (error) {
       alert(error.response?.data?.message);
@@ -157,7 +157,7 @@ const Register = () => {
         <div className="register-page__footer">
           <p
             className="text-center medium clr-blue fs-14 cursor-pointer"
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/")}
           >
             Already have an account!
           </p>

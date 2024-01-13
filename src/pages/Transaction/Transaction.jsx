@@ -83,7 +83,7 @@ const Transaction = () => {
 
         if (response.data) {
           alert("Transaction added successfully!");
-          return navigate("/");
+          return navigate("/home");
         }
       } catch (error) {
         console.log(error);
@@ -110,7 +110,7 @@ const Transaction = () => {
       );
       if (response.data) {
         alert("Transaction added successfully!");
-        return navigate("/");
+        return navigate("/home");
       }
     }
   };

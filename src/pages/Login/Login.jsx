@@ -29,7 +29,7 @@ const Login = () => {
 
     if (response.data.user) {
       alert("Login successful!");
-      return navigate("/");
+      return navigate("/home");
     }
   };
 
