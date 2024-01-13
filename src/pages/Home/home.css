@@ -1,0 +1,11 @@
+@media (width <= 430px) {
+  .home-page__profile__name {
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+  }
+}
+
+.border-left {
+  border-left: 1px solid var(--clr-white);
+}

@@ -1,0 +1,348 @@
+/* flex */
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* text */
+.text-center {
+  text-align: center;
+}
+
+/* margin */
+.mb-1 {
+  margin-block: 1rem;
+}
+
+.mb-2 {
+  margin-block: 2rem;
+}
+
+.mb-8 {
+  margin-block: 8px;
+}
+
+.mi-1 {
+  margin-inline: 1rem;
+}
+
+.mi-2 {
+  margin-inline: 2rem;
+}
+
+.mi-8 {
+  margin-inline: 8px;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.ml-4 {
+  margin-left: 4px;
+}
+/* padding */
+
+.p-1 {
+  padding: 1rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.p-8 {
+  padding: 8px;
+}
+
+.pb-1 {
+  padding-block: 1rem;
+}
+
+.pb-2 {
+  padding-block: 2rem;
+}
+
+.pb-8 {
+  padding-block: 8px;
+}
+
+.pi-1 {
+  padding-inline: 1rem;
+}
+
+.pi-2 {
+  padding-inline: 2rem;
+}
+
+.pi-8 {
+  padding-inline: 8px;
+}
+
+/* gap */
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap-8 {
+  gap: 8px;
+}
+
+.gap-4 {
+  gap: 4px;
+}
+
+/* fonts */
+.fs-1 {
+  font-size: 1rem;
+}
+
+.fs-2 {
+  font-size: 2rem;
+}
+
+.fs-3 {
+  font-size: 3rem;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+/* border */
+.br-5 {
+  border-radius: 5px;
+}
+
+.br-10 {
+  border-radius: 10px;
+}
+
+.br-1 {
+  border-radius: 1rem;
+}
+
+/* Height */
+.mh-100vh {
+  min-height: 100svh;
+}
+
+/* Width */
+.mx-width-375 {
+  max-width: 375px;
+}
+
+.mx-width-220 {
+  max-width: 220px;
+}
+
+.w100 {
+  width: 100%;
+}
+
+/* Position absolute */
+.pos-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Headings */
+
+.thin {
+  font-weight: 100;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.extra-bold {
+  font-weight: 800;
+}
+
+.clr-blue {
+  color: var(--clr-blue);
+}
+.clr-black {
+  color: var(--clr-black);
+}
+.clr-white {
+  color: var(--clr-white);
+}
+.clr-gray-1 {
+  color: var(--clr-gray-1);
+}
+.clr-gray-2 {
+  color: var(--clr-gray-2);
+}
+.clr-gray-3 {
+  color: var(--clr-gray-3);
+}
+.clr-gray-4 {
+  color: var(--clr-gray-4);
+}
+.clr-gray-5 {
+  color: var(--clr-gray-5);
+}
+
+.bg-clr-blue {
+  background-color: var(--clr-blue);
+}
+.bg-clr-black {
+  background-color: var(--clr-black);
+}
+.bg-clr-white {
+  background-color: var(--clr-white);
+}
+.bg-clr-gray-1 {
+  background-color: var(--clr-gray-1);
+}
+.bg-clr-gray-2 {
+  background-color: var(--clr-gray-2);
+}
+.bg-clr-gray-3 {
+  background-color: var(--clr-gray-3);
+}
+.bg-clr-gray-4 {
+  background-color: var(--clr-gray-4);
+}
+.bg-clr-gray-5 {
+  background-color: var(--clr-gray-5);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.ox-scroll {
+  overflow-x: scroll;
+  padding-bottom: 0.5rem;
+}
+
+.ox-scroll::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  /* margin-top: 1rem;
+  margin-left: 1rem;
+  padding-left: 1rem; */
+}
+
+/* Track */
+.ox-scroll::-webkit-scrollbar-track {
+  background: var(--clr-gray-3);
+  border-radius: 1rem;
+}
+
+/* Handle */
+.ox-scroll::-webkit-scrollbar-thumb {
+  background: var(--clr-gray-1);
+  border-radius: 1rem;
+}
+
+/* Handle on hover */
+.ox-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-blue);
+}
+
+.box-shadow-1 {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.b-none {
+  border: none;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.relative {
+  position: relative;
+}
+
+.br-50 {
+  border-radius: 50%;
+}
+
+.w40 {
+  width: 40px;
+}
+
+.h40 {
+  height: 40px;
+}
+.w80 {
+  width: 80px;
+}
+
+.h80 {
+  height: 80px;
+}
+
+.disabled {
+  cursor: not-allowed;
+}

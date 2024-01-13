@@ -1,0 +1,53 @@
+<div className="show-friends">
+      {user?.friends?.map((friend) => {
+        let amountClassName = friend.amount < 0 ? "debt" : "due";
+        if(friend.amount === 0) {
+         amountClassName = "bg-clr-blue clr-white"
+        }
+        return (
+          <div className="friend-card" key={friend.id}>
+            <p className="bold">{friend.name}</p>
+            <p className={`medium p-8 mt-8 br-5 ${amountClassName}`}>
+              {friend.amount}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+
+
+.show-friends {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.friend-card {
+  padding: 1rem;
+  background-color: var(--clr-gray-4);
+  border-radius: 10px;
+}
+
+.debt {
+  background-color: #d24545;
+  color: var(--clr-white);
+}
+
+.due {
+  background-color: lime;
+  color: var(--clr-black);
+}
+
+@media (width <= 768px) {
+  .show-friends {
+    flex-direction: column;
+  }
+
+  .friend-card {
+    display: flex;
+    align-items: center !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+}

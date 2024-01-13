@@ -1,0 +1,31 @@
+<div className="show-history flex-col pi-1">
+      {user?.transactions?.map((transaction) => {
+        return (
+          <div className="history-card flex-col gap-8 p-1 bg-clr-gray-3 mt-8 br-10">
+            <p className="medium">
+              <span className="bold">Amount:</span> {transaction.amount}₹
+            </p>
+            <p className="medium">
+              <span className="bold">Description:</span>{" "}
+              {transaction.description}
+            </p>
+            <p className="medium">
+              <span className="bold">Time:</span>{" "}
+              {formatDate(transaction.createdAt)}
+            </p>
+            {!transaction?.isPersonalExpense && (
+              <div className="medium">
+                <span className="bold">Paid For:</span>
+                <p className="flex gap-8">
+                  {transaction?.paidFor?.map((each) => (
+                    <span key={each.id}>
+                      {each.name}: {each.share}
+                    </span>
+                  ))}
+                </p>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
