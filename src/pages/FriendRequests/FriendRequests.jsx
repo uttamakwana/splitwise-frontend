@@ -11,7 +11,7 @@ const FriendRequests = () => {
     <div className="friend-requests-page">
       <Header />
       <div className="show-friend-requests flex-col pi-1">
-        {user?.friendRequests > 0 ?
+        {user?.friendRequests?.length > 0 ?
           user.friendRequests.map((friendRequest) => (
             <FriendRequestCard
               id={user._id}

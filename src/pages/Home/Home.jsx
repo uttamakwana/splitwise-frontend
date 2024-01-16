@@ -57,7 +57,6 @@ const Home = () => {
     getUserInfo();
   }, [user._id, setUser]);
 
-
   return (
     <main className="home-page mh-100vh">
       {loading ? (
