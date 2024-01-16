@@ -4,7 +4,18 @@ import Home from "./Home/Home.jsx";
 import Transaction from "./Transaction/Transaction.jsx";
 import Friends from "./Friends/Friends.jsx";
 import History from "./History/History.jsx";
-import FriendRequests from './FriendRequests/FriendRequests.jsx';
+import FriendRequests from "./FriendRequests/FriendRequests.jsx";
 import AllUsers from "./AllUsers/AllUsers.jsx";
+import ThatFriend from "./ThatFriend/ThatFriend.jsx";
 
-export { Login, Register, Home, Transaction, Friends, History, FriendRequests, AllUsers };
+export {
+  Login,
+  Register,
+  Home,
+  Transaction,
+  Friends,
+  History,
+  FriendRequests,
+  AllUsers,
+  ThatFriend,
+};
