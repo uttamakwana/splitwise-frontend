@@ -3,14 +3,18 @@ import "../styles.css";
 import axios from "axios";
 import { Context } from "../../context/ContextProvider";
 import { useNavigate } from "react-router-dom";
+import { Loader } from "../../components";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const { setUser } = useContext(Context);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   // function
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const email = document.querySelector("#login-email");
     const password = document.querySelector("#login-password");
     if (!email.value || !password.value) {
@@ -18,24 +22,34 @@ const Login = () => {
       return email.focus();
     }
 
-    const response = await axios.post("https://splitwise-n301.onrender.com/users/login", {
-      email: email.value,
-      password: password.value,
-    });
-    console.log(response.data);
-    console.log(response.data.user);
-    localStorage.setItem("user", JSON.stringify(response.data.user));
-    setUser(response.data.user);
+    try {
+      const response = await axios.post("http://localhost:8080/users/login", {
+        email: email.value,
+        password: password.value,
+      });
 
-    if (response.data.user) {
-      alert("Login successful!");
-      return navigate("/home");
+      console.log(response.data);
+      console.log(response.data.user);
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+      setUser(response.data.user);
+
+      if (response.data.user) {
+        toast.success("Login successfull!");
+        setLoading(false);
+        // alert("Login successful!");
+        return navigate("/home");
+      }
+    } catch (error) {
+      toast.error(error.response?.data?.message);
     }
   };
 
   return (
     // login page
     <main className="login-page">
+      <div>
+        <Toaster />
+      </div>
       <div className="login-page-left"></div>
       <div className="login-page-right">
         {/* Login Header */}
@@ -78,13 +92,17 @@ const Login = () => {
           </div>
           {/* Login Button */}
           <div className="login-page__form__form-group form-group keep-me-signed-in-group">
-            <button
-              title="Login"
-              className="bg-clr-blue clr-white"
-              onClick={handleLogin}
-            >
-              Login
-            </button>
+            {loading ? (
+              <Loader />
+            ) : (
+              <button
+                title="Login"
+                className="bg-clr-blue clr-white"
+                onClick={handleLogin}
+              >
+                Login
+              </button>
+            )}
           </div>
         </form>
         {/* Login Footer */}

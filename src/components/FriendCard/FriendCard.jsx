@@ -7,7 +7,8 @@ import { Context } from "../../context/ContextProvider";
 const FriendCard = ({ id, u }) => {
   const [send, setSend] = useState(false);
   const { user } = useContext(Context);
-  let alreadyFriend = !user.friends.find((fr) => fr.id === u._id);
+  let alreadyFriend = user.friends.find((fr) => fr.id === u._id);
+  console.log(alreadyFriend);
 
   useEffect(() => {
     const sentRequests =
@@ -21,7 +22,7 @@ const FriendCard = ({ id, u }) => {
   const sendFriendRequest = async (e) => {
     try {
       const response = await axios.post(
-        "https://splitwise-n301.onrender.com/friends/send-request",
+        "http://localhost:8080/friends/send-request",
         {
           id,
           friend_id: u._id,

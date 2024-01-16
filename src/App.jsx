@@ -11,6 +11,7 @@ import {
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
+import { Loader } from './components';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/transaction" element={<Transaction />} />
         <Route path="/friends" element={<Friends />} />
         <Route path="/history" element={<History />} />
+        {/* <Route path="/loader" element={<Loader />} /> */}
       </Routes>
     </BrowserRouter>
   );

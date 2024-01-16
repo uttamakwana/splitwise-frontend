@@ -4,7 +4,7 @@ export const twoLetter = (input) => {
   // Take the first character of each word
   let outputString = "";
   for (var i = 0; i < words.length; i++) {
-    outputString += words[i].charAt(0);
+    outputString += words[i].charAt(0).toUpperCase();
   }
   // Output the result
   return outputString;

@@ -5,6 +5,7 @@ import Hero from "./Hero/Hero.jsx";
 import FriendRequestCard from "./FriendRequestCard/FriendRequestCard.jsx";
 import Card from "./Card/Card.jsx";
 import TransactionCard from "./TransactionCard/TransactionCard.jsx";
+import Loader from './Loader/Loader.jsx';
 
 export {
   Navigation,
@@ -14,4 +15,5 @@ export {
   FriendRequestCard,
   Card,
   TransactionCard,
+  Loader
 };
