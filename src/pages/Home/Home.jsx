@@ -9,6 +9,30 @@ const Home = () => {
   const [showFriends, setShowFriends] = useState(true);
   const [loading, setLoading] = useState(false);
 
+  // useEffect(() => {
+  //   const getUserInfo = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const response = await axios.post(
+  //         "https://splitwise-n301.onrender.com/users/info",
+  //         {
+  //           id: user._id,
+  //         },
+  //         { withCredentials: true }
+  //       );
+  //       if (response.data) {
+  //         setUser(response.data.user);
+  //         setLoading(false);
+  //       }
+  //     } catch (error) {
+  //       setLoading(false);
+  //       console.log(error);
+  //     }
+  //   };
+
+  //   getUserInfo();
+  // }, [user._id, setUser]);
+
   useEffect(() => {
     const getUserInfo = async () => {
       try {
@@ -22,16 +46,17 @@ const Home = () => {
         );
         if (response.data) {
           setUser(response.data.user);
-          setLoading(false);
         }
       } catch (error) {
+        console.error("Error fetching user info:", error);
+      } finally {
         setLoading(false);
-        console.log(error);
       }
     };
 
     getUserInfo();
   }, [user._id, setUser]);
+
 
   return (
     <main className="home-page mh-100vh">
