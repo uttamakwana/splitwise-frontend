@@ -15,14 +15,18 @@ const AllUsers = () => {
     const getAllUsers = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("https://splitwise-n301.onrender.com/users", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://splitwise-n301.onrender.com/users",
+          {
+            withCredentials: true,
+          }
+        );
         if (response.data.users) {
           setUsers(response.data.users);
           setLoading(false);
         }
       } catch (error) {
+        setLoading(false);
         toast.error(error.response?.data?.message);
         console.log(error);
         // alert(error?.response?.data?.message);

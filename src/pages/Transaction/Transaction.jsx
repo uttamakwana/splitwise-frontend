@@ -96,29 +96,34 @@ const Transaction = () => {
         console.log(error);
       }
     } else {
-      console.log("first");
-      const response = await axios.post(
-        "https://splitwise-n301.onrender.com/transactions/make",
-        {
-          id: user._id,
-          amount: amount.value,
-          description: description.value,
-          isPersonalExpense: !wantToSplit,
-          paidBy: user._id,
-          paidFor: [
-            {
-              id: user._id,
-              name: user.name,
-              share: amount.value,
-              description: description.value,
-            },
-          ],
-        },
-        { withCredentials: true }
-      );
-      if (response.data) {
-        toast.success("Transaction added successfully!");
-        // alert("Transaction added successfully!");
+      try {
+        console.log("first");
+        const response = await axios.post(
+          "https://splitwise-n301.onrender.com/transactions/make",
+          {
+            id: user._id,
+            amount: amount.value,
+            description: description.value,
+            isPersonalExpense: !wantToSplit,
+            paidBy: user._id,
+            paidFor: [
+              {
+                id: user._id,
+                name: user.name,
+                share: amount.value,
+                description: description.value,
+              },
+            ],
+          },
+          { withCredentials: true }
+        );
+        if (response.data) {
+          toast.success("Transaction added successfully!");
+          // alert("Transaction added successfully!");
+          setLoading(false);
+          return navigate("/home");
+        }
+      } catch (error) {
         setLoading(false);
         return navigate("/home");
       }
@@ -128,7 +133,9 @@ const Transaction = () => {
   return (
     // transaction page
     <main className="transaction-page margin-auto mh-100vh">
-     <div><Toaster /></div>
+      <div>
+        <Toaster />
+      </div>
       {/* transaction Header */}
       {loading ? (
         <Loader />
