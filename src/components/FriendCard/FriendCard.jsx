@@ -27,7 +27,8 @@ const FriendCard = ({ id, u }) => {
           id,
           friend_id: u._id,
           status: "pending",
-        }
+        },
+        { withCredentials: true }
       );
 
       if (response.data.friend) {

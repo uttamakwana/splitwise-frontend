@@ -11,6 +11,10 @@ const Register = () => {
   const { setUser } = useContext(Context);
   const [loading, setLoading] = useState(false);
 
+  const resetSentFriendRequests = () => {
+    localStorage.setItem("sentFriendRequests", JSON.stringify([]));
+  };
+
   const handleRegister = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -40,14 +44,19 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post("https://splitwise-n301.onrender.com/users", {
-        name: name.value,
-        email: email.value,
-        number: number.value,
-        password: password.value,
-      });
+      const response = await axios.post(
+        "https://splitwise-n301.onrender.com/users",
+        {
+          name: name.value,
+          email: email.value,
+          number: number.value,
+          password: password.value,
+        },
+        { withCredentials: true }
+      );
 
       if (response.data.user) {
+        resetSentFriendRequests();
         setUser(response.data.user);
         setLoading(false);
         toast.success("Registration successful!");

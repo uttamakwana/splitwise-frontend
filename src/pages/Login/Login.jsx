@@ -7,36 +7,44 @@ import { Loader } from "../../components";
 import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
-  const { setUser } = useContext(Context);
+  const { setUser, setToken } = useContext(Context);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   // function
+
+  const resetSentFriendRequests = () => {
+    localStorage.setItem("sentFriendRequests", JSON.stringify([]));
+  };
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
     const email = document.querySelector("#login-email");
     const password = document.querySelector("#login-password");
     if (!email.value || !password.value) {
-      alert("Please enter all the details!");
+      toast.error("Please enter all the details!");
       return email.focus();
     }
 
     try {
-      const response = await axios.post("https://splitwise-n301.onrender.com/users/login", {
-        email: email.value,
-        password: password.value,
-      });
+      const response = await axios.post(
+        "https://splitwise-n301.onrender.com/users/login",
+        {
+          email: email.value,
+          password: password.value,
+        },
+        { withCredentials: true }
+      );
 
-      console.log(response.data);
-      console.log(response.data.user);
       localStorage.setItem("user", JSON.stringify(response.data.user));
       setUser(response.data.user);
+      resetSentFriendRequests();
+      setToken(response.data.token);
 
       if (response.data.user) {
         toast.success("Login successfull!");
         setLoading(false);
-        // alert("Login successful!");
         return navigate("/home");
       }
     } catch (error) {

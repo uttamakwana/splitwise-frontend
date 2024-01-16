@@ -13,9 +13,13 @@ const Home = () => {
     const getUserInfo = async () => {
       try {
         setLoading(true);
-        const response = await axios.post("https://splitwise-n301.onrender.com/users/info", {
-          id: user._id,
-        });
+        const response = await axios.post(
+          "https://splitwise-n301.onrender.com/users/info",
+          {
+            id: user._id,
+          },
+          { withCredentials: true }
+        );
         if (response.data) {
           setUser(response.data.user);
           setLoading(false);
