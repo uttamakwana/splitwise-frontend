@@ -40,7 +40,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:8080/users", {
+      const response = await axios.post("https://splitwise-n301.onrender.com/users", {
         name: name.value,
         email: email.value,
         number: number.value,

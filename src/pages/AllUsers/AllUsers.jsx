@@ -15,7 +15,7 @@ const AllUsers = () => {
     const getAllUsers = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:8080/users");
+        const response = await axios.get("https://splitwise-n301.onrender.com/users");
         if (response.data.users) {
           setUsers(response.data.users);
           setLoading(false);

@@ -22,7 +22,7 @@ const FriendCard = ({ id, u }) => {
   const sendFriendRequest = async (e) => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/friends/send-request",
+        "https://splitwise-n301.onrender.com/friends/send-request",
         {
           id,
           friend_id: u._id,

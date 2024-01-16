@@ -70,7 +70,7 @@ const Transaction = () => {
     if (paidFor?.length) {
       try {
         const response = await axios.post(
-          "http://localhost:8080/transactions/make",
+          "https://splitwise-n301.onrender.com/transactions/make",
           {
             id: user._id,
             amount: amount.value,
@@ -97,7 +97,7 @@ const Transaction = () => {
     } else {
       console.log("first");
       const response = await axios.post(
-        "http://localhost:8080/transactions/make",
+        "https://splitwise-n301.onrender.com/transactions/make",
         {
           id: user._id,
           amount: amount.value,
